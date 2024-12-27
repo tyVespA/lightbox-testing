@@ -1,0 +1,48 @@
+.imageSliderContainer {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  margin-inline: auto;
+}
+
+.imageSliderContainer button {
+  all: unset;
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.089);
+}
+
+.imageSliderContainer button.prev {
+  left: 0;
+}
+
+.imageSliderContainer button.nextButton {
+  right: 0;
+}
+
+.imageSliderContainer button svg {
+  fill: black;
+  stroke: white;
+}
+
+/* SPECIFIC TO THIS SLIDER  */
+.imagesContainer {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+  flex-shrink: 0;
+  flex-grow: 0;
+  transition: translate 0.3s ease-in-out;
+}
