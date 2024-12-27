@@ -28,6 +28,15 @@
   left: 100%;
   animation: autoRun 20s linear infinite;
   animation-delay: calc((20s / var(--quantity)) * (var(--position) - 1));
+  transition: filter 0.3s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .item {
+    animation: none;
+    position: static;
+    left: auto;
+  }
 }
 
 .item img {
@@ -48,4 +57,9 @@
 
 .sliderContainer:hover .item {
   animation-play-state: paused !important;
+  filter: grayscale(1);
+}
+
+.sliderContainer .item:hover {
+  filter: grayscale(0);
 }
