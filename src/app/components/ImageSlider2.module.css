@@ -5,7 +5,8 @@
   margin-inline: auto;
 }
 
-.imageSliderContainer button {
+.prevButton,
+.nextButton {
   all: unset;
   cursor: pointer;
   position: absolute;
@@ -13,10 +14,10 @@
   top: 0;
   bottom: 0;
   padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.089);
+  background-color: rgba(255, 255, 255, 0.226);
 }
 
-.imageSliderContainer button.prev {
+.imageSliderContainer button.prevButton {
   left: 0;
 }
 
@@ -45,4 +46,20 @@
   flex-shrink: 0;
   flex-grow: 0;
   transition: translate 0.3s ease-in-out;
+}
+
+.buttonsContainer {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.buttonsContainer button {
+  cursor: pointer;
+  padding: 2px;
+  background-color: transparent;
+  border: transparent;
 }

@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { ArrowBigLeft, ArrowBigRight } from "lucide-react";
+import { ArrowBigLeft, ArrowBigRight, Circle, CircleDot } from "lucide-react";
 import styles from "./ImageSlider2.module.css";
 
 export default function ImageSlider2({ imageUrls }) {
@@ -22,7 +22,7 @@ export default function ImageSlider2({ imageUrls }) {
   return (
     <div className={styles.imageSliderContainer}>
       <div className={styles.imagesContainer}>
-        <button onClick={showPreviousImage}>
+        <button onClick={showPreviousImage} className={styles.prevButton}>
           <ArrowBigLeft />
         </button>
         {imageUrls.map((url, index) => (
@@ -38,11 +38,13 @@ export default function ImageSlider2({ imageUrls }) {
           <ArrowBigRight />
         </button>
       </div>
-      {/* <img
-        src={imageUrls[imageIndex]}
-        alt={imageUrls[imageIndex]}
-        className={styles.image}
-      /> */}
+      <div className={styles.buttonsContainer}>
+        {imageUrls.map((btn, index) => (
+          <button key={index} onClick={() => setImageIndex(index)}>
+            {index === imageIndex ? <CircleDot /> : <Circle />}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
